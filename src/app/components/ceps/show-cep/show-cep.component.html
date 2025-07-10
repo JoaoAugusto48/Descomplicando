@@ -1,0 +1,92 @@
+<section class="container">
+  <header>
+    <h2>
+      Pesquisar CEP
+    </h2>
+  </header>
+  <form action="" class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="cep" class="col-form-label">Informe o número do CEP:</label>
+    </div>
+    <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="cep"
+        name="cep"
+        placeholder="Digite o CEP"
+        [(ngModel)]="code.cep"
+      >
+    </div>
+    <div class="col-auto">
+      <button type="button" (click)="buscarCep()" class="btn btn-outline-dark">Search</button>
+    </div>
+  </form>
+
+  <div *ngIf="code.cep != ''" class="my-2 card bg-body-tertiary">
+    <div class="card-body">
+      {{ code.logradouro }}, {{ code.bairro }} {{ code.cep }} - {{ code.localidade }} ({{ code.uf }}) {{ code.complemento }}
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="row">
+        <p>Informações Gerais</p>
+        <div class="col-4">
+          <label for="logradouro">Logradouro</label>
+          <p>{{ code.logradouro }}</p>
+        </div>
+        <div class="col-3">
+          <label for="bairro">Bairro</label>
+          <p>{{ code.bairro }}</p>
+        </div>
+        <div class="col-3">
+          <label for="cidade">Cidade</label>
+          <p>{{ code.localidade }}</p>
+        </div>
+        <div class="col-2">
+          <label for="estado">Estado</label>
+          <p>{{ code.estado }} ({{ code.uf }})</p>
+        </div>
+        <div class="col-4">
+          <label for="complemento">Complemento</label>
+          <p>{{ code.complemento }}</p>
+        </div>
+        <div class="col-3">
+          <label for="regiao">Região</label>
+          <p>{{ code.regiao }}</p>
+        </div>
+        <div class="col-3">
+          <label for="unidade">Unidade</label>
+          <p>{{ code.unidade }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="row">
+        <p>Extras</p>
+        <div class="col-3">
+          <label for="ibge">IBGE</label>
+          <p>{{ code.ibge }}</p>
+        </div>
+        <div class="col-3">
+          <label for="gia">GIA</label>
+          <p>{{ code.gia }}</p>
+        </div>
+        <div class="col-3">
+          <label for="ddd">DDD</label>
+          <p>{{ code.ddd }}</p>
+        </div>
+        <div class="col-3">
+          <label for="siafi">Siafi</label>
+          <p>{{ code.siafi }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
