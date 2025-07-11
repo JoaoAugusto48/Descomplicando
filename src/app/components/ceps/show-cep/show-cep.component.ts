@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Cep } from '../ceps';
 import { CepService } from '../cep.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -46,7 +46,7 @@ export class ShowCepComponent implements OnInit {
 
   buscarCep() {
     if(this.code.cep.length == 8 || this.code.cep.length == 9){
-      this.service.buscarPorCEP(this.code.cep).subscribe(code => {
+      this.service.findByCEP(this.code.cep).subscribe(code => {
         this.code = code
       });
     }

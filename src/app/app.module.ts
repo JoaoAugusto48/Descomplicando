@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { FindCepComponent } from './components/ceps/find-cep/find-cep.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowCepComponent
+    ShowCepComponent,
+    FindCepComponent
   ],
   imports: [
     BrowserModule,

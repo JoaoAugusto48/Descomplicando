@@ -12,8 +12,13 @@ export class CepService {
 
   constructor(private http: HttpClient) { }
 
-  buscarPorCEP(cep: string): Observable<Cep> {
+  findByCEP(cep: string): Observable<Cep> {
     const url = this.API.replace('{cep}', cep);
     return this.http.get<Cep>(url);
+  }
+
+  findByUfCidadeRua(uf: string, cidade: string, rua: string): Observable<Cep[]> {
+    const url = this.API.replace('{cep}', `${uf}/${cidade}/${rua}`);
+    return this.http.get<Cep[]>(url);
   }
 }

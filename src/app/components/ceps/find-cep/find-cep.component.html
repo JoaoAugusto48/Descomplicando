@@ -1,0 +1,56 @@
+<section class="container">
+  <header>
+    <h2>Pesquisar CEP</h2>
+  </header>
+
+  <form action="">
+    <label for="estado">Estado</label>
+    <select name="estado" id="estado" class="form-select" [(ngModel)]="localidade.estado">
+      <option value="" selected>Selecione</option>
+      <option>PR</option>
+      <option>RS</option>
+      <option>RJ</option>
+      <option>SP</option>
+    </select>
+
+    <label for="cidade">Cidade</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cidade"
+      name="cidade"
+      placeholder="Digite a cidade"
+      [(ngModel)]="localidade.cidade"
+    >
+
+    <label for="rua">Rua</label>
+    <input
+      type="text"
+      class="form-control"
+      id="rua"
+      name="rua"
+      placeholder="Digite um trecho da rua"
+      [(ngModel)]="localidade.logradouro"
+    >
+
+    <button class="btn btn-primary" (click)="findCeps()">Search</button>
+  </form>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>CEP</th>
+        <th>Logradouro</th>
+        <th>Acessar</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="listaCep.length > 0">
+      <tr *ngFor="let local of listaCep">
+        <td scope="row">{{ local.cep }}</td>
+        <td>{{ local.logradouro }}, {{ local.bairro }} {{ local.complemento }}</td>
+        <td><button (click)="showCep(local.cep)" class="btn btn-outline-info">Acessar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
