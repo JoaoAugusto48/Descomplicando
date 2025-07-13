@@ -45,7 +45,8 @@
   </form>
 
   <div class="table-responsive">
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered caption-top">
+      <caption *ngIf="listaCep.length >= 50">Existem muitas ocorrências, especifique mais.</caption>
       <thead>
         <tr>
           <th>CEP</th>
@@ -56,7 +57,7 @@
       </thead>
       <tbody *ngIf="listaCep.length > 0, else naoPesquisado">
         <tr *ngFor="let local of listaCep">
-          <td scope="row"><a href="" class="link-primary">{{ local.cep }}</a></td>
+          <td scope="row"><a class="link-primary">{{ local.cep }}</a></td>
           <td>{{ local.logradouro }}</td>
           <td>{{ local.bairro }}</td>
           <td>{{ local.complemento }}</td>

@@ -11,35 +11,38 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ShowCepComponent implements OnInit {
 
   code: Cep = {
-    // cep: '',
-    // logradouro: '',
-    // complemento: '',
-    // unidade: '',
-    // bairro: '',
-    // localidade: '',
-    // uf: '',
-    // estado: '',
-    // regiao: '',
-    // ibge: '',
-    // gia: '',
-    // ddd: '',
-    // siafi: '',
-    cep: '19973-174',
-    logradouro: 'Rua Rosalina Candida Franco',
-    complemento: 'até o número 150',
+    cep: '',
+    logradouro: '',
+    complemento: '',
     unidade: '',
-    bairro: 'Jardim Bela Vista',
-    localidade: 'Palmital',
-    uf: 'SP',
-    estado: 'São Paulo',
-    regiao: 'Sudeste',
-    ibge: '3535309',
-    gia: '5010',
-    ddd: '18',
-    siafi: '6807',
+    bairro: '',
+    localidade: '',
+    uf: '',
+    estado: '',
+    regiao: '',
+    ibge: '',
+    gia: '',
+    ddd: '',
+    siafi: '',
+    // cep: '19973-174',
+    // logradouro: 'Rua Rosalina Candida Franco',
+    // complemento: 'até o número 150',
+    // unidade: '',
+    // bairro: 'Jardim Bela Vista',
+    // localidade: 'Palmital',
+    // uf: 'SP',
+    // estado: 'São Paulo',
+    // regiao: 'Sudeste',
+    // ibge: '3535309',
+    // gia: '5010',
+    // ddd: '18',
+    // siafi: '6807',
   }
 
-  constructor(private service: CepService) { }
+  constructor(
+    private service: CepService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
   }

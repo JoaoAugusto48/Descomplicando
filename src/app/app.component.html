@@ -1,3 +1,26 @@
-<main>
-  <router-outlet></router-outlet>
-</main>
+<mat-sidenav-container class="container-size">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-toolbar>Opções</mat-toolbar>
+    <mat-nav-list dense>
+      <a mat-list-item routerLink="/showCep">Mostrar CEP</a>
+      <a mat-list-item routerLink="/findCep">Procurar CEP</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Descomplicando</span>
+    </mat-toolbar>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
